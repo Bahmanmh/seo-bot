@@ -1,0 +1,125 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:orientation="vertical"
+    android:layoutDirection="rtl"
+    android:background="#F4F6F8">
+
+    <!-- نوار وضعیت بالا -->
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:background="#1E293B"
+        android:padding="10dp"
+        android:orientation="horizontal"
+        android:gravity="center_vertical">
+
+        <TextView
+            android:id="@+id/tvStatus"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:layout_weight="1"
+            android:text="وضعیت: آماده شروع"
+            android:textColor="#38BDF8"
+            android:textSize="12sp"
+            android:textStyle="bold" />
+
+        <Button
+            android:id="@+id/btnToggleSettings"
+            android:layout_width="wrap_content"
+            android:layout_height="36dp"
+            android:text="تنظیمات"
+            android:textSize="11sp" />
+    </LinearLayout>
+
+    <!-- پنل تنظیمات قابل جمع شدن -->
+    <LinearLayout
+        android:id="@+id/settingsPanel"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:orientation="vertical"
+        android:padding="12dp"
+        android:background="#FFFFFF"
+        android:elevation="4dp">
+
+        <EditText
+            android:id="@+id/etKeyword"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:hint="کلمه کلیدی هدف (مثال: خرید پارکت لمینت)"
+            android:inputType="text"
+            android:textSize="13sp" />
+
+        <EditText
+            android:id="@+id/etTargetDomain"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:hint="دامنه سایت مقصد (مثال: example.com)"
+            android:inputType="textUri"
+            android:textSize="13sp" />
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:orientation="horizontal">
+
+            <EditText
+                android:id="@+id/etChainCount"
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:layout_weight="1"
+                android:hint="تعداد لینک زنجیره‌ای (مثلا 3)"
+                android:inputType="number"
+                android:text="3"
+                android:textSize="13sp" />
+
+            <EditText
+                android:id="@+id/etLoopCount"
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:layout_weight="1"
+                android:hint="تعداد کل تکرار (مثلا 10)"
+                android:inputType="number"
+                android:text="10"
+                android:textSize="13sp" />
+        </LinearLayout>
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:orientation="horizontal"
+            android:layout_marginTop="6dp">
+
+            <Button
+                android:id="@+id/btnAccessibility"
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:layout_weight="1"
+                android:text="۱. فعال‌سازی دسترسی پرواز"
+                android:backgroundTint="#F59E0B"
+                android:textColor="#FFFFFF"
+                android:textSize="11sp" />
+
+            <Button
+                android:id="@+id/btnStartStop"
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:layout_weight="1"
+                android:layout_marginStart="6dp"
+                android:text="۲. شروع ربات"
+                android:backgroundTint="#10B981"
+                android:textColor="#FFFFFF"
+                android:textSize="12sp"
+                android:textStyle="bold" />
+        </LinearLayout>
+    </LinearLayout>
+
+    <!-- مرورگر داخلی -->
+    <WebView
+        android:id="@+id/webView"
+        android:layout_width="match_parent"
+        android:layout_height="0dp"
+        android:layout_weight="1" />
+
+</LinearLayout>
